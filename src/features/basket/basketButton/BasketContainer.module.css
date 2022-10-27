@@ -1,0 +1,5 @@
+.basket-button-container {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+}

@@ -1,0 +1,12 @@
+.update-basket-button-container {
+    display: flex;
+    padding-top: 5%;
+    justify-content: flex-end;
+    margin-right: 24px;
+}
+
+.checkout-modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2%;
+}

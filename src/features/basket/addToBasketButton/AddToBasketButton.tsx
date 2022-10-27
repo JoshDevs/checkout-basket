@@ -1,0 +1,24 @@
+import React from "react";
+import Button from "@mui/material/Button";
+import { AddShoppingCart } from "@mui/icons-material";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { Product } from "../../../interfaces/Product";
+import { addToBasket, selectBasketItemBySku } from "../basketButton/basketSlice";
+
+const AddToBasketButton: React.FC<{counterValue: number, product: Product}> = ({counterValue, product}) => {
+    const state = useAppSelector(state => state);
+    const selectedBasketItem = selectBasketItemBySku(state, product.sku);
+    const dispatch = useAppDispatch();
+    return (
+        <Button
+        disabled={selectedBasketItem && selectedBasketItem.quantity >= product.basketLimit}
+        className="add-to-basket-button"
+        onClick={() =>
+          counterValue > 0 && dispatch(addToBasket({quantity: counterValue, sku: product.sku}))
+          }>
+          <AddShoppingCart fontSize="large" />
+        </Button>
+    )
+}
+
+export default AddToBasketButton;
