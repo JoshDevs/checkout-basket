@@ -12,7 +12,7 @@ const BasketButton: React.FC<{setOpenCheckoutModal: (flag: boolean) => void}> = 
         <div className={styles["basket-button-container"]}>
           <Button sx={{background: "white"}} className="shopping-cart-button" onClick={basketSum > 0 ? onClickHandler : undefined} size="large">
               <ShoppingCart fontSize="large"/>
-              {basketSum > 0 && <div className="basket-sum">{basketSum}</div>}
+              {basketSum > 0 ? <div className="basket-sum">{basketSum}</div> : <></>}
           </Button>
         </div>
     )
