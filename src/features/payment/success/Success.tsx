@@ -8,16 +8,19 @@ import { resetPayment } from "../paymentSlice";
 
 const Success: React.FC<{setCloseSuccess: (value: boolean) => void, setOpenCheckoutModal: (value: boolean) => void}> = ({setCloseSuccess, setOpenCheckoutModal}) => {
     const dispatch = useAppDispatch();
+
+    const onClickHandler = () => {
+        dispatch(resetBasket());
+        dispatch(resetPayment());
+        setCloseSuccess(true);
+        setOpenCheckoutModal(false);
+    }
+
     return (
       <Box className={styles["payment-successful"]}>
             <div>Payment Succeeded</div>
             <Button 
-            onClick={() => {
-                dispatch(resetBasket());
-                dispatch(resetPayment());
-                setCloseSuccess(true);
-                setOpenCheckoutModal(false);
-            }}
+            onClick={onClickHandler}
             variant="outlined"
             >
                 Ok

@@ -11,26 +11,30 @@ interface CounterProps {
 }
 
 const Counter: React.FC<CounterProps> = ({counterValue, setCounterValue, basketLimit}) => {
-    return (
-        <div className={styles["counter-container"]}>
-          <Button className="add-circle-button"
-          disabled={counterValue === basketLimit}
-          onClick={() => {
-            if (counterValue < basketLimit) setCounterValue(counterValue + 1)
-          }}>
-            <AddCircle />
-          </Button>
-          {counterValue}
-          <Button
-          className="remove-circle-button"
-          disabled={counterValue === 1}
-          onClick={() => {
-            if (counterValue > 1) setCounterValue(counterValue - 1);
-            }}>
-              <RemoveCircle />
-          </Button>
-        </div>
-    )
+  const onAddClickHandler = () => {
+    if (counterValue < basketLimit) setCounterValue(counterValue + 1)
+  };
+
+  const onRemoveClickHandler = () => {
+    if (counterValue > 1) setCounterValue(counterValue - 1);
+  }
+
+  return (
+      <div className={styles["counter-container"]}>
+        <Button className="add-circle-button"
+        disabled={counterValue === basketLimit}
+        onClick={onAddClickHandler}>
+          <AddCircle />
+        </Button>
+        {counterValue}
+        <Button
+        className="remove-circle-button"
+        disabled={counterValue === 1}
+        onClick={onRemoveClickHandler}>
+            <RemoveCircle />
+        </Button>
+      </div>
+  )
 }
 
 export default Counter;

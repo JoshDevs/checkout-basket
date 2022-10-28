@@ -9,10 +9,11 @@ const RemoveFromBasketButton: React.FC<{product: Product, counterValue: number}>
     const dispatch = useAppDispatch();
     const state = useAppSelector(state => state);
     const basketItem = selectBasketItemBySku(state, product.sku);
+
+    const onClickHandler = () => dispatch(removeFromBasket({sku: product.sku, quantity: counterValue}));
+    
     return (
-        <Button disabled={!!basketItem} onClick={() => {
-            dispatch(removeFromBasket({sku: product.sku, quantity: counterValue}))
-        }}>
+        <Button disabled={!!basketItem} onClick={onClickHandler}>
             <RemoveShoppingCart />
         </Button>
     );

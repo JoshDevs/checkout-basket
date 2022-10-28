@@ -9,13 +9,16 @@ const AddToBasketButton: React.FC<{counterValue: number, product: Product}> = ({
     const state = useAppSelector(state => state);
     const selectedBasketItem = selectBasketItemBySku(state, product.sku);
     const dispatch = useAppDispatch();
+
+    const onClickHandler = () => {
+      counterValue > 0 && dispatch(addToBasket({quantity: counterValue, sku: product.sku}))
+    }
+
     return (
         <Button
         disabled={selectedBasketItem && selectedBasketItem.quantity >= product.basketLimit}
         className="add-to-basket-button"
-        onClick={() =>
-          counterValue > 0 && dispatch(addToBasket({quantity: counterValue, sku: product.sku}))
-          }>
+        onClick={onClickHandler}>
           <AddShoppingCart fontSize="large" />
         </Button>
     )

@@ -20,8 +20,10 @@ const PaymentDetails: React.FC = () => {
     useMemo(() => {
         if (!paymentSuccessful && paymentStatus === ApiStatus.SUCCEEDED) setPaymentFailed(true)
     }, [paymentSuccessful, paymentStatus])
-
-    const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => setCardNumber(event.target.value)
+    
+    const onClickHandler = () => dispatch(fetchPayment(cardNumber));
+    const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => setCardNumber(event.target.value);
+    
     return (
         <Box className={styles["payment-form"]} component="form" noValidate autoComplete="off">
             <TextField
@@ -37,9 +39,7 @@ const PaymentDetails: React.FC = () => {
             color={!paymentFailed ? "primary" : "error"}
             disabled={cardNumber.length < 16}
             variant="outlined" sx={{ width: "140px" }}
-            onClick={() => {
-                dispatch(fetchPayment(cardNumber));
-            }}>
+            onClick={onClickHandler}>
                 Pay
             </Button>
         </Box>
