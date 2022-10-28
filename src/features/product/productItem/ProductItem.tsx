@@ -12,7 +12,7 @@ const ProductItem: React.FC<{product: Product}> = ({product}) => {
     const [counterValue, setCounterValue] = useState(1);
     return (
         <div className={styles["product-item-container"]} key={product.sku}>
-          <Card sx={{ width: "220px" }} variant="elevation" className="product-card" key={product.sku}>
+          <Card sx={{ width: "13.75rem" }} variant="elevation" className="product-card" key={product.sku}>
             <CardContent>
                 <Typography>
                     {product.name}

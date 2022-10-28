@@ -41,10 +41,10 @@ const CheckoutModal: React.FC<{openCheckoutModal: boolean, setOpenCheckoutModal:
                width: 550,
                height: "auto",
                bgcolor: 'background.paper',
-               border: '2px solid #000',
+               border: '0.125rem solid #000',
                boxShadow: 24,
                p: 4,
-               borderRadius: "25px"
+               borderRadius: "1.563rem"
             }}>
                 <div className={styles["checkout-modal-header"]}>
                     <Typography className="checkout-modal-title" variant="h5" component="h1">

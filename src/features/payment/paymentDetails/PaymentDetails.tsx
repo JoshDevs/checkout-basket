@@ -27,7 +27,7 @@ const PaymentDetails: React.FC = () => {
     return (
         <Box className={styles["payment-form"]} component="form" noValidate autoComplete="off">
             <TextField
-            sx={{ width: "320px" }}
+            sx={{ width: "20rem" }}
             variant="outlined"
             label="Required"
             defaultValue="Card Number" 
@@ -38,7 +38,7 @@ const PaymentDetails: React.FC = () => {
             <Button
             color={!paymentFailed ? "primary" : "error"}
             disabled={cardNumber.length < 16}
-            variant="outlined" sx={{ width: "140px" }}
+            variant="outlined" sx={{ width: "8.75rem" }}
             onClick={onClickHandler}>
                 Pay
             </Button>
