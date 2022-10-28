@@ -17,6 +17,6 @@ const RemoveFromBasketButton: React.FC<{product: Product, counterValue: number}>
             <RemoveShoppingCart />
         </Button>
     );
-}
+};
 
 export default RemoveFromBasketButton;

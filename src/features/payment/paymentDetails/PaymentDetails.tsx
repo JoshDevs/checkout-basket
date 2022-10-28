@@ -2,7 +2,7 @@ import React, { ChangeEvent, useMemo, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import styles from "./PaymentDetails.module.css"
+import styles from "./PaymentDetails.module.css";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { fetchPayment, selectPaymentStatus, selectPaymentSuccess } from "../paymentSlice";
 import { ApiStatus } from "../../../enums/ApiStatus";
@@ -18,8 +18,8 @@ const PaymentDetails: React.FC = () => {
     const dispatch = useAppDispatch();
 
     useMemo(() => {
-        if (!paymentSuccessful && paymentStatus === ApiStatus.SUCCEEDED) setPaymentFailed(true)
-    }, [paymentSuccessful, paymentStatus])
+        if (!paymentSuccessful && paymentStatus === ApiStatus.SUCCEEDED) setPaymentFailed(true);
+    }, [paymentSuccessful, paymentStatus]);
     
     const onClickHandler = () => dispatch(fetchPayment(cardNumber));
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => setCardNumber(event.target.value);
@@ -43,7 +43,7 @@ const PaymentDetails: React.FC = () => {
                 Pay
             </Button>
         </Box>
-    )
-}
+    );
+};
 
 export default PaymentDetails;

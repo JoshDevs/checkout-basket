@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { useAppDispatch } from "../../../app/hooks";
 import { resetBasket } from "../../basket/basketButton/basketSlice";
-import styles from "./Success.module.css"
+import styles from "./Success.module.css";
 import { resetPayment } from "../paymentSlice";
 
 const Success: React.FC<{setCloseSuccess: (value: boolean) => void, setOpenCheckoutModal: (value: boolean) => void}> = ({setCloseSuccess, setOpenCheckoutModal}) => {
@@ -14,7 +14,7 @@ const Success: React.FC<{setCloseSuccess: (value: boolean) => void, setOpenCheck
         dispatch(resetPayment());
         setCloseSuccess(true);
         setOpenCheckoutModal(false);
-    }
+    };
 
     return (
       <Box className={styles["payment-successful"]}>
@@ -26,7 +26,7 @@ const Success: React.FC<{setCloseSuccess: (value: boolean) => void, setOpenCheck
                 Ok
             </Button>
         </Box>
-    )
-}
+    );
+};
 
 export default Success;

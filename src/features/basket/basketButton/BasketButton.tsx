@@ -1,6 +1,6 @@
 import ShoppingCart from "@mui/icons-material/ShoppingCart";
 import Button from "@mui/material/Button";
-import styles from "./BasketContainer.module.css"
+import styles from "./BasketContainer.module.css";
 import React from "react";
 import { useAppSelector } from "../../../app/hooks";
 
@@ -15,7 +15,7 @@ const BasketButton: React.FC<{setOpenCheckoutModal: (flag: boolean) => void}> = 
               {basketSum > 0 ? <div className="basket-sum">{basketSum}</div> : <></>}
           </Button>
         </div>
-    )
-}
+    );
+};
 
 export default BasketButton;

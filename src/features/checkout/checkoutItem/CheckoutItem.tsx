@@ -9,7 +9,7 @@ import { removeAllFromBasket, updateBasket } from "../../basket/basketButton/bas
 
 const CheckoutItem: React.FC<{basketItem: BasketItem}> = ({basketItem}) => {
     const state = useAppSelector(state => state);
-    const product = selectProductBySku(state, basketItem.sku)
+    const product = selectProductBySku(state, basketItem.sku);
     const dispatch = useAppDispatch();
     const [checkoutCounter, setCheckoutCounter] = useState(basketItem.quantity);
 
@@ -32,7 +32,7 @@ const CheckoutItem: React.FC<{basketItem: BasketItem}> = ({basketItem}) => {
             </Button>
         </div>}
         </>
-    )
-}
+    );
+};
 
 export default CheckoutItem;

@@ -11,8 +11,8 @@ const AddToBasketButton: React.FC<{counterValue: number, product: Product}> = ({
     const dispatch = useAppDispatch();
 
     const onClickHandler = () => {
-      counterValue > 0 && dispatch(addToBasket({quantity: counterValue, sku: product.sku}))
-    }
+      counterValue > 0 && dispatch(addToBasket({quantity: counterValue, sku: product.sku}));
+    };
 
     return (
         <Button
@@ -21,7 +21,7 @@ const AddToBasketButton: React.FC<{counterValue: number, product: Product}> = ({
         onClick={onClickHandler}>
           <AddShoppingCart fontSize="large" />
         </Button>
-    )
-}
+    );
+};
 
 export default AddToBasketButton;

@@ -20,7 +20,7 @@ const ProductList: React.FC = () => {
         <div className={styles["product-list-container"]}>
           {productListStatus === ApiStatus.LOADING ? <div>Loading...</div> : productList.map(product => <ProductItem product={product} key={product.sku} />)}
         </div>
-    )
-}
+    );
+};
 
 export default ProductList;

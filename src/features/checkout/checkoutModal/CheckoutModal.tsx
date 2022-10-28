@@ -17,7 +17,7 @@ const CheckoutModal: React.FC<{openCheckoutModal: boolean, setOpenCheckoutModal:
     const onClickHandler = () => setOpenCheckoutModal(false);
     const [closeSuccess, setCloseSuccess] = useState(true);
 
-    const state = useAppSelector(state => state)
+    const state = useAppSelector(state => state);
     const basketItems = selectBasketItems(state);
 
     const sum = selectBasketSum(state);
@@ -28,7 +28,7 @@ const CheckoutModal: React.FC<{openCheckoutModal: boolean, setOpenCheckoutModal:
         if (paymentSuccessful) {
             setCloseSuccess(false);
         }
-    }, [paymentSuccessful])
+    }, [paymentSuccessful]);
     
     return (
         <>
@@ -59,7 +59,7 @@ const CheckoutModal: React.FC<{openCheckoutModal: boolean, setOpenCheckoutModal:
             </Box>
         </Modal>
         </>
-    )
-}
+    );
+};
 
 export default CheckoutModal;
